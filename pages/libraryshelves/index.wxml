@@ -1,0 +1,58 @@
+<!--pages/page2.wxml-->
+<import src="../../templates/rater.wxml" />
+
+<!--导航栏  -->
+<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}" >
+  <view class="tab-item {{currentTab==index?'active':''}}" wx:key="{{tags}}" wx:for="{{tags}}" data-current="{{index}}" bindtap="swichNav">{{item}}</view>
+</scroll-view>
+
+<!--主页面  -->
+<swiper class="tab-content" current="{{currentTab}}" duration="50"  bindchange="switchTab">
+  <!-- style="height:{{winHeight}}rpx"> -->
+  <!--循环加载页面 8个  -->
+  <swiper-item wx:key="{{tags}}" wx:for="{{tags}}" wx:for-index="tagsIndex">
+  <!--加载前出现一个加载图标，加载完后消失  -->
+    <block wx:if="{{showBooks[tagsIndex]?false:true}}">
+      <view class="loading_box">
+        <image class="loading load-img" src="../../images/loading.png"></image>
+      </view>
+    </block>
+  <!--图标消失，出现响应的数据  -->
+    <block wx:else>
+      <block scroll-y="true" class="scoll-h" wx:if="{{showBooks[tagsIndex].length>0?true:false}}" bindscrolltoupper="refresh" >
+        <view wx:key="{{showBooks[tagsIndex]}}" wx:for="{{showBooks[tagsIndex]}}" class="book" bindtap="toBorrowBook" data-isbn = "{{item.isbn}}" data-bookId="{{item._id}}">
+          <image src="{{item.image}}" class="book-image"></image>
+          <view class="book-title">{{item.title}}</view> 
+          <view class="book-rate">
+          <template is="rater"  data="{{ ...{value:item.rate,cutPercent:item.rate%2/2*100} }}" />
+          <text class="rate-avg">{{item.rate}}</text>
+          </view>
+        </view>
+      </block>
+      <view wx:else="{{showBooks[tagsIndex].length>0?false:true}}" class="nodata">
+          <image src="../../images/no-data.png" class="nodata-img"></image>
+          <text class="nodata-desc">Sorry！无此类书籍...</text>
+      </view>
+    </block>
+  </swiper-item>
+
+
+
+  <!-- <swiper-item wx:for="{{[1,2,3,4,5,6,7]}}">
+    <scroll-view scroll-y="true" class="scoll-h" >
+      <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+        <view class="item-ans">
+          <view class="avatar">
+            <image class="img" src="http://ookzqad11.bkt.clouddn.com/avatar.png"></image>
+          </view>
+          <view class="expertInfo">
+            <view class="name">欢颜</view>
+            <view class="tag">知名情感博主</view>
+            <view class="answerHistory">134个回答，2234人听过 </view>
+          </view>
+          <navigator url="/pages/askExpert/expertDetail" class="askBtn">问TA</navigator> 
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item> -->
+</swiper>

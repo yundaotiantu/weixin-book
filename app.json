@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/booktravel/index",
+    "pages/logs/logs",
+    "pages/libraryshelves/index",
+    "pages/mybooks/index",
+    "pages/booktravel/bookdetails/index",
+    "pages/booktravel/error/index",
+    "pages/libraryshelves/borrowBook/index",
+    "pages/ownerPage/index",
+    "testPages/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0066ff",
+    "navigationBarTitleText": "移动书城",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#FAFAFA"
+  },
+  "tabBar": {
+    "color":"#bbb",
+    "selectedColor":" #33ff66",
+    "list": [
+      {
+        "pagePath": "pages/booktravel/index",
+        "text": "首页",
+        "iconPath": "images/general.png",
+        "selectedIconPath": "images/click.png"
+      },
+      {
+        "pagePath": "pages/libraryshelves/index",
+        "text": "书城",
+        "iconPath": "images/general.png",
+        "selectedIconPath": "images/click.png"
+      },
+      {
+        "pagePath": "pages/mybooks/index",
+        "text": "我的图书",
+        "iconPath": "images/general.png",
+        "selectedIconPath": "images/click.png"
+      }
+    ]
+  }
+}

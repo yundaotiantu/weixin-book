@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="main">
+<!-- 书城简介  -->
+  <view class='introduce'>
+    <view class="book-icon">
+      <image src="../../images/book-icon.png"></image>
+    </view>
+    <view class='paragraph'>移动书城是一个图书分享和借阅工具，旨在共享闲置图书，并链接趣味相投的小伙伴。</view>
+     <!-- <view class='paragraph'>为保障用户的利益及安全，流动图书馆目前仅限于金山集团内部范围使用</view>  -->
+     <view class='paragraph'>移动书城到公司或学校，结识志趣一致的TA，快来开始你的图书之旅吧~</view>
+  </view>
+  <view class='scan'>
+    <button class='scan-btn' bindtap="scanBook">
+    <image src="../../images/scan.png" class="scan-img"></image>扫一扫图书
+    </button>
+  </view>
+</view>
+<view class='new-books'>
+  <view class='new-books-header'>
+    <text class="new-books-header-title">新书速递</text>
+    <!-- <text class="new-books-all">全部 ></text> -->
+  </view>
+  <scroll-view scroll-x="true" class="new-books-content" style="white-space: nowrap">
+    <image wx:key="{{newBooks}}" wx:for="{{newBooks}}" src="{{item.image}}" bindtap="toBorrowBook" data-isbn="{{item.isbn}}" data-bookid="{{item._id}}" class="new-book"></image>
+  </scroll-view>
+</view>
+
+
+
+
+
+
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <button class="get-phone-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">使用手机号注册</button>  
+</view>
+<view class="box">
+  other
+</view> -->

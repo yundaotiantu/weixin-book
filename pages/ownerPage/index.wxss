@@ -1,0 +1,188 @@
+/* pages/ownerPage.wxss */
+/* @import  '../../components/wux.wxss'; */
+page{
+  background-color:rgb(250,250,250);
+  height: 100%;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #fff;
+  width: 100%;
+  height: 20%;
+  box-sizing: border-box;
+}
+.user-info .userinfo-avatar{
+  border-radius: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 30rpx;
+}
+
+
+
+
+.user-books{
+  height: 80%;
+  overflow: auto;
+  width: 100%;
+}
+
+ .user-books  .container{
+   height: auto;
+ }
+ .user-books  .container .content{
+   display: flex;
+   align-items: center;
+   padding: 40rpx 0 40rpx 40rpx;
+   border-bottom: 1px solid #eee;
+ }
+ .user-books  .container .content .book-introduce{
+   width: 500rpx;
+   height: 300rpx;
+   position: relative;
+ }
+ .user-books  .container .content .book-image{
+  width: 210rpx;
+  height: 280rpx;
+  box-shadow: 0rpx 0rpx 50rpx #aaa;
+  margin-right: 40rpx;
+ }
+ .user-books  .container .content .rate{
+  height: 60rpx;
+ }
+ .user-books  .container .content .rate-avg{
+  font-size: 30rpx;
+  color: #666;
+  vertical-align: bottom;
+ }
+ .user-books  .container .content .author{
+   font-size: 30rpx;
+   color: #666;
+   margin-bottom: 15rpx;
+ }
+ .user-books  .container .content .press{
+   font-size: 30rpx;
+   color: #666;
+   margin-bottom: 15rpx;
+   width: 90%;
+   padding-bottom: 15rpx;
+   border-bottom: 1px solid #eee;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+ .user-books  .container .content .status{
+  height: 62rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+ }
+.status .status-btn{
+    display: inline-block;
+    height: 60rpx;
+    padding: 0;
+    border-radius: 40rpx;
+    width: 50%;
+    border: 1rpx solid #666;
+    line-height: 60rpx;
+    text-align: center;
+    color: #666;
+    font-size: 25rpx;
+  }
+  .status .status-btn.publish .borrower{
+    color: rgb(9,186,7);
+  }
+  .status .status-btn.borrow{
+    color: rgb(9,186,7);
+    border: 1rpx solid rgb(9,186,7);
+   }
+  .status .status-btn.borrow.returned{
+    color: #666;
+    border: 1rpx solid #666; 
+   }
+  .status .status-btn.borrow.failed{
+    color: rgb(217,59,38);
+    border: 1rpx solid rgb(217,59,38); 
+   }
+  .user-books .container .content .status .status-opr{
+    font-size: 25rpx;
+    color: rgb(9,186,7);
+    text-decoration: underline;
+    margin-left: 40rpx;
+  }
+
+ 
+
+
+.loading_box {
+  width: 100%;
+  text-align: center;
+  padding: 100rpx 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+  bottom: 30%;
+}
+.loading_box>view {
+  display: inline-block;
+}
+.loading1 {
+  background-size: cover;
+  width: 50rpx;
+  height: 50rpx;
+  -webkit-animation: loading 1s steps(12, end) infinite;
+  animation: loading 1s steps(12, end) infinite;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+.nodata{
+  margin: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 249rpx;
+  height: 230rpx;
+}
+.nodata-img{
+  width: 249rpx;
+  height: 191rpx;    
+}
+.nodata-desc{
+  display: inline-block;
+  font-size: 25rpx;
+  color: rgb(127,187,234);
+  text-align: center;
+  height: 30rpx;
+  line-height: 30rpx;
+  width: 100%;
+}
